@@ -79,7 +79,7 @@ for y in ${ROI[@]}; do
 	
 	if [ -f "${atlas_masks}/${y}MaskNeuro.nii.gz" ]
 	then
-		echo "Neurosynth map already masked with ${x}"
+		echo "Neurosynth map already masked with ${y}"
 	else 
 		echo "Masking Neurosynth map with ${y}"
 		fslmaths ${reference}/NeurosynthAnxietyUniformityTestBin -mas ${atlas_masks}/${y}MaskThrBin ${atlas_masks}/${y}MaskNeuro
