@@ -2,7 +2,7 @@
 
 data=/data/kemal206/PBOX_rest_data
 scripts=/home/kemal206/PBOX_scripts
-bet-values=${scripts}/PBOX_bet-values.csv
+betvalues=${scripts}/PBOX_bet-values.csv
 
 ############################################################################################
 
@@ -18,7 +18,7 @@ template=${scripts}/PBOX_reg_template.fsf
 
 # BET the structural image
 echo "Beginning to run BET on the structural image for each subject"
-read ${bet-values} | while IFS="," read sub thresh comments; do
+read ${betvalues} | while IFS="," read sub thresh comments; do
 	for s in ${sub}; do
 		echo "Running BET on structural image for ${s}"
 		bet ${data}/${s}/${s}_struct.nii.gz ${data}/${s}/${s}_struct_brain.nii.gz -f ${thresh}
